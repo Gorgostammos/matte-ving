@@ -1,0 +1,33 @@
+body {
+    text-align: center;
+    font-size: larger;
+    margin-top: 50px;
+    background-color:whitesmoke;
+}
+
+h1#Poeng {
+    display: block;
+    font-size: xx-large;
+    font-weight: bold;
+    background-color: black;
+    color: aliceblue;
+    width: 25%;
+    margin: auto;
+}
+
+p {
+    font-size: large;
+    font-weight: bold;
+}
+
+button#sjekkSvar {
+    font-size: large;
+    background-color: greenyellow;
+    border-radius: 10px;
+}
+
+button#avsluttSpill {
+    font-size: large;
+    background-color: red;
+    border-radius: 10px;
+}
