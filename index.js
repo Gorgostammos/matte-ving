@@ -178,7 +178,7 @@ function sjekkSvar() {
     setTimeout(() => {
         genererNyOppgave();
         rundeTilbakemelding.innerText = ""; // fjern meldingen
-    }, 4000);
+    }, 1000000);
 }
 
 function oppdaterPoeng() {

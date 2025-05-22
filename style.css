@@ -2,7 +2,38 @@ body {
     text-align: center;
     font-size: larger;
     margin-top: 50px;
-    background-color:whitesmoke;
+    background-color: whitesmoke;
+}
+
+article#main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+    border: 2px solid black;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h3 {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: auto;
+    margin-top: 10px;
+    padding-top: 15px;
+}
+
+article#Oppgaver {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    border-bottom: 1px solid;
+}
+
+section {
+    margin-left: 20px;
 }
 
 h1#Poeng {
@@ -20,6 +51,37 @@ p {
     font-weight: bold;
 }
 
+p#tilbakemelding,
+#tilbakemelding1,
+#tilbakemelding2,
+#tilbakemelding3,
+#tilbakemelding4 {
+    padding-left: 5px;
+}
+
+/*dette fjerner pilene i input felte*/
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input {
+    height: 30px;
+    width: 60px;
+}
+
+section#knapper {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
 button#sjekkSvar {
     font-size: large;
     background-color: greenyellow;
@@ -30,4 +92,33 @@ button#avsluttSpill {
     font-size: large;
     background-color: red;
     border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    h1#Poeng {
+        width: 45%;
+    }
+
+    article#main {
+        width: 95%;
+    }
+
+    article#Oppgaver {
+        margin-left: 11px;
+        margin-top: 15px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    section {
+        margin-left: 5px;
+        font-size: 15px;
+    }
+
+    h3 {
+        font-size: medium;
+    }
+
 }
