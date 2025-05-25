@@ -5,37 +5,6 @@ body {
     background-color: whitesmoke;
 }
 
-article#main {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    margin-bottom: 20px;
-    border: 2px solid black;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-h3 {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    margin: auto;
-    margin-top: 10px;
-    padding-top: 15px;
-}
-
-article#Oppgaver {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    border-bottom: 1px solid;
-}
-
-section {
-    margin-left: 20px;
-}
-
 h1#Poeng {
     display: block;
     font-size: xx-large;
@@ -46,8 +15,43 @@ h1#Poeng {
     margin: auto;
 }
 
+article#main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+    border: 2px solid black;
+    width: 80%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+h3 {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: auto;
+    margin-top: 10px;
+    padding-top: 15px;
+    font-size: 36px;
+}
+
+
+article.oppgaver {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 20px;
+    padding: 70px;
+    border-bottom: 1px solid black;
+    font-size: 32px;
+
+}
+
 p {
-    font-size: large;
+    font-size: 32px;
     font-weight: bold;
 }
 
@@ -67,26 +71,31 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 input {
-    height: 30px;
-    width: 60px;
+    height: 50px;
+    width: 80px;
+    font-weight: normal;
+    font-size: 32px;
 }
 
 section#knapper {
     display: flex;
     justify-content: center;
     align-items: baseline;
+    gap: 65px;
 }
 
 button#sjekkSvar {
-    font-size: large;
+    font-size: 35px;
     background-color: greenyellow;
     border-radius: 10px;
+    color: black;
 }
 
 button#avsluttSpill {
-    font-size: large;
+    font-size: 35px;
     background-color: red;
     border-radius: 10px;
+    color: black;
 }
 
 @media only screen and (max-width: 600px) {
@@ -95,25 +104,41 @@ button#avsluttSpill {
     }
 
     article#main {
-        width: 95%;
+        width: 100%;
+        height: auto;
     }
 
-    article#Oppgaver {
-        margin-left: 11px;
-        margin-top: 15px;
+    article.oppgaver {
+        display: grid;
+        justify-content: center;
+        border-bottom: 3px solid;
+        justify-items: center;
+        width: 100%;
+        margin: auto;
+        gap: 0px;
+        padding: 0px;
     }
 
     p {
-        font-size: 15px;
+        font-size: xx-large;
     }
 
     section {
-        margin-left: 5px;
-        font-size: 15px;
+        font-size: x-large;
     }
 
     h3 {
-        font-size: medium;
+        font-size: x-large;
+    }
+
+    input {
+        font-size: x-large;
+    }
+
+    button#sjekkSvar,
+    button#avsluttSpill {
+        font-size: 25px;
+        padding: 3px;
     }
 
 }

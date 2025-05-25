@@ -31,18 +31,16 @@ function streakPoeng() {
         const hurra = document.getElementById("hurra");
         hurra.innerText = "Hurra! Du klarte 10 poeng, bra jobbet! 🎉";
         hurra.style.color = "blue"; // Valgfritt for ekstra effekt
-    }else if (poeng == 20){
+    } else if (poeng == 20) {
         const hurra = document.getElementById("hurra");
         hurra.innerText = "Hurra! Du klarte 20 poeng, bra jobbet! 🎉";
         hurra.style.color = "blue"; // Valgfritt for ekstra effekt
     }
- 
+
     setTimeout(() => {
         hurra.innerText = "";
     }, 3000);
 }
-
-
 
 function genererNyOppgave() {
     tall1 = genererTall();
@@ -79,14 +77,13 @@ function genererNyOppgave() {
     document.getElementById("brukerSvar4").value = "";
 }
 
-
 // function genererNyOppgave1() {
-    // tall3 = genererTall();
-    // tall4 = genererTall();
+// tall3 = genererTall();
+// tall4 = genererTall();
 
-    // document.getElementById("oppgave2").innerText = `Hva er ${tall3} * ${tall4}?`;
-    // document.getElementById("tilbakemelding1").innerText = "";
-    // document.getElementById("brukerSvar1").value = "";
+// document.getElementById("oppgave2").innerText = `Hva er ${tall3} * ${tall4}?`;
+// document.getElementById("tilbakemelding1").innerText = "";
+// document.getElementById("brukerSvar1").value = "";
 // }
 
 function sjekkSvar() {
@@ -112,7 +109,7 @@ function sjekkSvar() {
         tilbakemelding.style.color = "red";
     }
 
-// oppgave 2
+    // oppgave 2
     const brukerSvar1 = parseFloat(document.getElementById("brukerSvar1").value);
     const riktigSum1 = addNumber1(tall3, tall4);
     const tilbakemelding1 = document.getElementById("tilbakemelding1");
@@ -152,7 +149,7 @@ function sjekkSvar() {
 
     // oppgvane 4
     const brukerSvar3 = parseFloat(document.getElementById("brukerSvar3").value);
-    const riktigSum3 = addNumber3(tall7, tall8,tall2);
+    const riktigSum3 = addNumber3(tall7, tall8, tall2);
     const tilbakemelding3 = document.getElementById("tilbakemelding3");
 
     if (isNaN(brukerSvar3)) {
@@ -169,7 +166,7 @@ function sjekkSvar() {
         tilbakemelding3.style.color = "red";
     }
 
-  // oppgvane 4
+    // oppgvane 4
     const brukerSvar4 = parseFloat(document.getElementById("brukerSvar4").value);
     const riktigSum4 = addNumber4(tall1, tall4, tall6);
     const tilbakemelding4 = document.getElementById("tilbakemelding4");
@@ -200,7 +197,7 @@ function sjekkSvar() {
     setTimeout(() => {
         genererNyOppgave();
         rundeTilbakemelding.innerText = ""; // fjern meldingen
-    }, 1000);
+    }, 2300);
 }
 
 function oppdaterPoeng() {
