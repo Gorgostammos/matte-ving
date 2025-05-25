@@ -26,6 +26,21 @@ function addNumber4(a, b, c) {
     return a + b - c;
 }
 
+function streakPoeng() {
+    if (poeng === 10) {
+        const hurra = document.getElementById("hurra");
+        hurra.innerText = "Hurra! Du klarte 10 poeng, bra jobbet! 🎉";
+        hurra.style.color = "blue"; // Valgfritt for ekstra effekt
+    } else if (poeng == 20) {
+        const hurra = document.getElementById("hurra");
+        hurra.innerText = "Hurra! Du klarte 20 poeng, bra jobbet! 🎉";
+        hurra.style.color = "blue"; // Valgfritt for ekstra effekt
+    }
+
+    setTimeout(() => {
+        hurra.innerText = "";
+    }, 3000);
+}
 
 function genererNyOppgave() {
     tall1 = genererTall();
@@ -62,14 +77,13 @@ function genererNyOppgave() {
     document.getElementById("brukerSvar4").value = "";
 }
 
-
 // function genererNyOppgave1() {
-    // tall3 = genererTall();
-    // tall4 = genererTall();
+// tall3 = genererTall();
+// tall4 = genererTall();
 
-    // document.getElementById("oppgave2").innerText = `Hva er ${tall3} * ${tall4}?`;
-    // document.getElementById("tilbakemelding1").innerText = "";
-    // document.getElementById("brukerSvar1").value = "";
+// document.getElementById("oppgave2").innerText = `Hva er ${tall3} * ${tall4}?`;
+// document.getElementById("tilbakemelding1").innerText = "";
+// document.getElementById("brukerSvar1").value = "";
 // }
 
 function sjekkSvar() {
@@ -88,13 +102,14 @@ function sjekkSvar() {
         tilbakemelding.innerText = "✅ Riktig!";
         tilbakemelding.style.color = "green";
         poeng++;
+        streakPoeng();
         riktigeISjekk++;
     } else {
         tilbakemelding.innerText = `❌ Feil. Riktig svar er ${riktigSum}.`;
         tilbakemelding.style.color = "red";
     }
 
-// oppgave 2
+    // oppgave 2
     const brukerSvar1 = parseFloat(document.getElementById("brukerSvar1").value);
     const riktigSum1 = addNumber1(tall3, tall4);
     const tilbakemelding1 = document.getElementById("tilbakemelding1");
@@ -106,6 +121,7 @@ function sjekkSvar() {
         tilbakemelding1.innerText = "✅ Riktig!";
         tilbakemelding1.style.color = "green";
         poeng++;
+        streakPoeng();
         riktigeISjekk++;
     } else {
         tilbakemelding1.innerText = `❌ Feil. Riktig svar er ${riktigSum1}.`;
@@ -124,6 +140,7 @@ function sjekkSvar() {
         tilbakemelding2.innerText = "✅ Riktig!";
         tilbakemelding2.style.color = "green";
         poeng++;
+        streakPoeng();
         riktigeISjekk++;
     } else {
         tilbakemelding2.innerText = `❌ Feil. Riktig svar er ${riktigSum2}.`;
@@ -132,7 +149,7 @@ function sjekkSvar() {
 
     // oppgvane 4
     const brukerSvar3 = parseFloat(document.getElementById("brukerSvar3").value);
-    const riktigSum3 = addNumber3(tall7, tall8,tall2);
+    const riktigSum3 = addNumber3(tall7, tall8, tall2);
     const tilbakemelding3 = document.getElementById("tilbakemelding3");
 
     if (isNaN(brukerSvar3)) {
@@ -142,13 +159,14 @@ function sjekkSvar() {
         tilbakemelding3.innerText = "✅ Riktig!";
         tilbakemelding3.style.color = "green";
         poeng++;
+        streakPoeng();
         riktigeISjekk++;
     } else {
         tilbakemelding3.innerText = `❌ Feil. Riktig svar er ${riktigSum3}.`;
         tilbakemelding3.style.color = "red";
     }
 
-  // oppgvane 4
+    // oppgvane 4
     const brukerSvar4 = parseFloat(document.getElementById("brukerSvar4").value);
     const riktigSum4 = addNumber4(tall1, tall4, tall6);
     const tilbakemelding4 = document.getElementById("tilbakemelding4");
@@ -160,6 +178,7 @@ function sjekkSvar() {
         tilbakemelding4.innerText = "✅ Riktig!";
         tilbakemelding4.style.color = "green";
         poeng++;
+        streakPoeng();
         riktigeISjekk++;
     } else {
         tilbakemelding4.innerText = `❌ Feil. Riktig svar er ${riktigSum4}.`;
@@ -178,14 +197,13 @@ function sjekkSvar() {
     setTimeout(() => {
         genererNyOppgave();
         rundeTilbakemelding.innerText = ""; // fjern meldingen
-    }, 4000);
+    }, 2300);
 }
 
 function oppdaterPoeng() {
     document.getElementById("Poeng").innerText = `Poeng: ${poeng}`;
 
 }
-
 
 function avsluttSpill() {
     // Vis sluttpoeng
@@ -201,9 +219,6 @@ function avsluttSpill() {
     document.getElementById("brukerSvar3").disabled = true;
     document.getElementById("brukerSvar4").disabled = true;
 
-
-
-
     // Skjul eller deaktiver knapper
     document.querySelectorAll("button").forEach(btn => {
         if (btn.innerText !== "Avslutt") {
@@ -211,8 +226,6 @@ function avsluttSpill() {
         }
     });
 }
-
-
 
 // Kjør ved oppstart
 oppdaterPoeng();
